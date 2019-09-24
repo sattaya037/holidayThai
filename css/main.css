@@ -2,7 +2,9 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
+@-ms-viewport{
+  width: device-width;
+}
 
 @font-face {
   font-family: Lato-Regular;
@@ -26,7 +28,10 @@ body, html {
 	height: 100%;
 	font-family: sans-serif;
 }
-
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
 /* ------------------------------------ */
 a {
 	margin: 0px;
@@ -93,12 +98,7 @@ iframe {
   overflow: hidden;
 }
 
-.table100 .ps__rail-y {
-  width: 9px;
-  background-color: transparent;
-  opacity: 1 !important;
-  right: 5px;
-}
+
 
 .table100 .ps__rail-y::before {
   content: "";
