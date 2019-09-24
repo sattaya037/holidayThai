@@ -22,10 +22,10 @@ function drawTable(holiday) {
     var row = $("<tr />")
     no = no+1
     $("#personDataTable").append(row); 
-    row.append($("<td class='cell100 column1'>" + no + "</td>"));
-    row.append($("<td class='cell100 column2'>" + x.HolidayWeekDayThai + "</td>"));
-    row.append($("<td class='cell100 column3'>" + x.DateThai + "</td>"));
-    row.append($("<td class='cell100 column4'>" + x.HolidayDescriptionThai + "</td>"));
+    row.append($("<td class='column1'>" + no + "</td>"));
+    row.append($("<td class='column2'>" + x.HolidayWeekDayThai + "</td>"));
+    row.append($("<td class='column3'>" + x.DateThai + "</td>"));
+    row.append($("<td class='column4'>" + x.HolidayDescriptionThai + "</td>"));
   }
 
 }
