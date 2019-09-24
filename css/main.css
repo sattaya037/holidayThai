@@ -2,14 +2,7 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-@-ms-viewport{
-  width: device-width;
-}
 
-@font-face {
-  font-family: Lato-Regular;
-  src: url('../fonts/Lato/Lato-Regular.ttf'); 
-}
 
 @font-face {
   font-family: Lato-Bold;
@@ -28,10 +21,7 @@ body, html {
 	height: 100%;
 	font-family: sans-serif;
 }
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-}
+
 /* ------------------------------------ */
 a {
 	margin: 0px;
@@ -98,7 +88,12 @@ iframe {
   overflow: hidden;
 }
 
-
+.table100 .ps__rail-y {
+  width: 9px;
+  background-color: transparent;
+  opacity: 1 !important;
+  right: 5px;
+}
 
 .table100 .ps__rail-y::before {
   content: "";
@@ -134,9 +129,14 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Table ]*/
-
+/* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+} */
 .limiter {
-  width: 1366px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -157,7 +157,7 @@ iframe {
 }
 
 .wrap-table100 {
-  width: 1170px;
+  width: 100%;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -189,7 +189,7 @@ th, td {
 }
 
 .column4 {
-  width: 55%;
+  width: 50%;
 }
 
 .column5 {
