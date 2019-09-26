@@ -14,10 +14,9 @@ function initializeApp(data) {
       }
       const img = document.createElement('img');
       img.src = profile.pictureUrl+'?fit=thumb&f=top_left&h=200&w=200&r=180';
-      imf.class="rounded-circle";
+      img.class="rounded-circle";
       img.alt = "Profile Picture";
-      img.width="304";
-      img.height="236";
+      img.style="width:200px";
       profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
       window.alert(profile.pictureUrl);
