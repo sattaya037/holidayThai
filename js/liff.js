@@ -13,14 +13,13 @@ function initializeApp(data) {
           profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
       }
       const img = document.createElement('img');
-      img.src = profile.pictureUrl+'?fit=thumb&f=top_left&h=200&w=200&r=180';
+      img.src = profile.pictureUrl;
       img.class="rounded-circle";
       img.alt = "Profile Picture";
       img.style="width:200px";
       profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
-      window.alert(profile.pictureUrl);
-
+      document.getElementById("image").src=profile.pictureUrl;
     })
     .catch((err) => {
       console.log('error', err);
