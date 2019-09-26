@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-app.get('/', function(req, res) {
+app.get('/holiday', function(req, res) {
     app.use(express.static(__dirname));
-    res.sendFile(__dirname+'/index.html')
+    res.sendFile(__dirname+'/holiday.html')
 });
 app.get('/liff', function(req, res) {
   app.use(express.static(__dirname));
