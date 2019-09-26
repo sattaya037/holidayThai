@@ -18,6 +18,8 @@ function initializeApp(data) {
       img.style="width:200px";
       profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
+      window.alert("hello");
+
     })
     .catch((err) => {
       console.log('error', err);
