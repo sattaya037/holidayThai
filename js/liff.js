@@ -16,7 +16,7 @@ function initializeApp(data) {
       img.src = profile.pictureUrl;
       img.class="rounded-circle";
       img.alt = "Profile Picture";
-      img.style="width:200px";
+      img.style="width:100px";
       profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
       document.getElementById("image").src=profile.pictureUrl;
