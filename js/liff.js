@@ -9,6 +9,8 @@ function initializeApp(data) {
     .then(profile => {
       document.getElementById('displaynamefield').innerHTML=profile.displayName;
       document.getElementById("image").src=profile.pictureUrl;
+      const accessToken = liff.getAccessToken();
+      document.getElementById('accesstokenfield').textContent = accessToken;
     })
     .catch((err) => {
       console.log('error', err);
@@ -20,8 +22,7 @@ function initializeApp(data) {
     document.getElementById('utouidfield').textContent = data.context.utouId;
     document.getElementById('roomidfield').textContent = data.context.roomId;
     document.getElementById('groupidfield').textContent = data.context.groupId;
-    const accessToken = liff.getAccessToken();
-    document.getElementById('accesstokenfield').textContent = accessToken;
+ 
     toggleAccessToken();
     // openWindow call
     document.getElementById('openwindowbutton').addEventListener('click', function () {
