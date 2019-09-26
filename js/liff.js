@@ -20,7 +20,9 @@ function initializeApp(data) {
     document.getElementById('utouidfield').textContent = data.context.utouId;
     document.getElementById('roomidfield').textContent = data.context.roomId;
     document.getElementById('groupidfield').textContent = data.context.groupId;
-
+    const accessToken = liff.getAccessToken();
+    document.getElementById('accesstokenfield').textContent = accessToken;
+    toggleAccessToken();
     // openWindow call
     document.getElementById('openwindowbutton').addEventListener('click', function () {
         liff.openWindow({
@@ -54,29 +56,7 @@ function initializeApp(data) {
         const accessToken = liff.getAccessToken();
         document.getElementById('accesstokenfield').textContent = accessToken;
         toggleAccessToken();
-    });
-
-    // get profile call
-    document.getElementById('getprofilebutton').addEventListener('click', function () {
-        liff.getProfile().then(function (profile) {
-            document.getElementById('useridprofilefield').textContent = profile.userId;
-            document.getElementById('displaynamefield').innerHTML = profile.displayName;
-
-            const profilePictureDiv = document.getElementById('profilepicturediv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            const img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = "Profile Picture";
-            profilePictureDiv.appendChild(img);
-
-            document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-            toggleProfileData();
-        }).catch(function (error) {
-            window.alert("Error getting profile: " + error);
-        });
-    });
+    }); 
 }
 
 function toggleAccessToken() {
