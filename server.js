@@ -3,8 +3,11 @@ const app = express();
 app.get('/', function(req, res) {
     app.use(express.static(__dirname));
     res.sendFile(__dirname+'/index.html')
-    console.log("connect to")
-  });
+});
+app.get('/liff', function(req, res) {
+  app.use(express.static(__dirname));
+  res.sendFile(__dirname+'/liff.html')
+});
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
     console.log(`listening on ${port}`);
