@@ -18,7 +18,7 @@ function initializeApp(data) {
       img.style="width:200px";
       profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
-      window.alert("hello");
+      window.alert(profile.pictureUrl);
 
     })
     .catch((err) => {
