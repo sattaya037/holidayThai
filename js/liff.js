@@ -7,18 +7,7 @@ window.onload = function (e) {
 function initializeApp(data) {
     liff.getProfile()
     .then(profile => {
-      const name = profile.displayName
-      const profilePictureDiv = document.getElementById('profilepicturediv');
-      if (profilePictureDiv.firstElementChild) {
-          profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-      }
-      const img = document.createElement('img');
-      img.src = profile.pictureUrl;
-      img.class="rounded-circle";
-      img.alt = "Profile Picture";
-      img.style="width:100px";
-      profilePictureDiv.appendChild(img);
-      document.getElementById('displaynamefield').innerHTML=name;
+      document.getElementById('displaynamefield').innerHTML=profile.displayName;
       document.getElementById("image").src=profile.pictureUrl;
     })
     .catch((err) => {
