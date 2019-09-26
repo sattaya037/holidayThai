@@ -8,6 +8,14 @@ function initializeApp(data) {
     liff.getProfile()
     .then(profile => {
       const name = profile.displayName
+      const profilePictureDiv = document.getElementById('profilepicturediv');
+      if (profilePictureDiv.firstElementChild) {
+          profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+      }
+      const img = document.createElement('img');
+      img.src = profile.pictureUrl;
+      img.alt = "Profile Picture";
+      profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
     })
     .catch((err) => {
