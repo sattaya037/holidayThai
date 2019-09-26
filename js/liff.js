@@ -15,6 +15,7 @@ function initializeApp(data) {
       const img = document.createElement('img');
       img.src = profile.pictureUrl;
       img.alt = "Profile Picture";
+      img.class="rounded"
       profilePictureDiv.appendChild(img);
       document.getElementById('displaynamefield').innerHTML=name;
     })
