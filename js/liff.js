@@ -5,26 +5,14 @@ window.onload = function (e) {
 };
 
 function initializeApp(data) {
-    liff.getProfile().then(function (profile) {
-        document.getElementById('useridprofilefield').textContent = profile.userId;
-        document.getElementById('displaynamefield').innerHTML = profile.displayName;
-
-        const profilePictureDiv = document.getElementById('profilepicturediv');
-        if (profilePictureDiv.firstElementChild) {
-            profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-        }
-        const img = document.createElement('img');
-        img.src = profile.pictureUrl;
-        img.alt = "Profile Picture";
-        profilePictureDiv.appendChild(img);
-
-        document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-        toggleProfileData();
-    }).catch(function (error) {
-        window.alert("Error getting profile: " + error);
+    liff.getProfile()
+    .then(profile => {
+      const name = profile.displayName
+      document.getElementById('displaynamefield').innerHTML=name;
+    })
+    .catch((err) => {
+      console.log('error', err);
     });
-
-
     document.getElementById("useridfield").innerHTML = data.context.userId;
     document.getElementById('languagefield').textContent = data.language;
     document.getElementById('viewtypefield').textContent = data.context.viewType;
