@@ -8,9 +8,7 @@ function initializeApp(data) {
     liff.getProfile()
     .then(profile => {
       document.getElementById('displaynamefield').innerHTML=profile.displayName;
-      document.getElementById("image").src=profile.pictureUrl;
-      const accessToken = liff.getAccessToken();
-      document.getElementById('accesstokenfield').textContent = accessToken;
+      document.getElementById("image").src=profile.pictureUrl; 
     })
     .catch((err) => {
       console.log('error', err);
