@@ -18,14 +18,10 @@
 
       // Output as Data URI
       var string = doc.output('datauri');
-
-      var iframe = "<iframe width='100%' height='100%' src='" + string + "'></iframe>"
-
-      var x = window.open();
-      x.document.open();
-      x.document.write(iframe);
-      x.document.close();
+      document.getElementById("image").src=string; 
   </script>
+      <iframe id="image" src="" height="200" width="300"></iframe>
+
 
 </body>
 </html>
