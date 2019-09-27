@@ -1,15 +1,8 @@
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
 
 function PDF() {
-    doc.fromHTML($('#content').html(), 15, 15, {
-        'width': 170,
-            'elementHandlers': specialElementHandlers
-    });
-    doc.save('sample-file.pdf');
+    console.log("PDF");
+    var pdf = new jsPDF();
+    pdf.text(30, 30, 'Hello world!');
+    pdf.save('hello_world.pdf');
 }
 
