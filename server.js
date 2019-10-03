@@ -12,6 +12,11 @@ app.get('/pdf', function(req, res) {
   app.use(express.static(__dirname));
   res.sendFile(__dirname+'/spare.html')
 });
+app.get('/gmail', function(req, res) {
+  app.use(express.static(__dirname));
+  res.sendFile(__dirname+'/gmail.html')
+});
+
 
   const port = process.env.PORT || 3000;
   app.listen(port, () => {

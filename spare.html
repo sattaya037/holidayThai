@@ -7,33 +7,59 @@
   <title>Document</title>
 </head>
 <body>
-    <!-- <iframe id="image" src="invoice.pdf" height="100%" width="500px"></iframe> -->
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <a href="mailto:sattaya.ra@ics-th.com?subject=test&amp;body=test">Send mail</a>
+    <button onclick="PDF()">Generate pdf</button>
+    <!-- <table id="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>IP-address</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Donna</td>
+            <td>Moore</td>
+            <td>dmoore0@furl.net</td>
+            <td>China</td>
+            <td>211.56.242.221</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Janice</td>
+            <td>Henry</td>
+            <td>jhenry1@theatlantic.com</td>
+            <td>Ukraine</td>
+            <td>38.36.7.199</td>
+        </tr>
+        </tbody>
+    </table> -->
+    <iframe  id="image" src="" height="500px" width="80%"></iframe>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <script src="jspdf.plugin.autotable.min.js"></script>
     <script src="spare.js"></script>
-    <script>
-        const canvas = document.querySelector('#canvas');
-    const signaturePad = new SignaturePad(canvas, {
-      backgroundColor: 'rgb(238,238,238)',
-    });
-    $(window).on('load', function(){
-      canvas.setAttribute('width', $('.container').width());
-      canvas.setAttribute('height', window.innerHeight - $('#btn').outerHeight() - 10);
-      signaturePad.clear();
-	  // Initializes a LIFF app
-      liff.init(function (data) {});
-    });
-    //  var doc = new jsPDF();
-    //   doc.text(20, 20, 'Hello world!');
-    //   doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
-    //   doc.addPage();
-    //   doc.text(20, 20, 'Do you like that?');
-      
-      // Output as Data URI
-      // var string = doc.output('datauri');
-      // console.log(string)
-      // document.getElementById("image").src=string+"#toolbar=0"; 
+    <script type="text/javascript">
+      function generate() {
+        var doc = new jsPDF();
+        var head = [["ID", "Country", "Rank", "Capital"]];
+        var body = [
+            [1, "Denmark", 7.526, "Copenhagen"],
+            [2, "Switzerland", 	7.509, "Bern"],
+            [3, "Iceland", 7.501, "Reykjavík"]
+        ];
+        doc.autoTable({head: head, body: body});
+        // Simple html example
+        doc.autoTable({html: '#table'});
+        var string = doc.output('datauri');
+      console.log(string)
+      document.getElementById("image").src=string+"#toolbar=0"; 
+    }
+
   </script>
 
 
